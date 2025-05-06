@@ -81,7 +81,7 @@
 <body>
     <h1>Audio Samples</h1>
 
-    <!-- Libri Dataset -->
+    <!-- Automatic EQ-->
     <div class="dataset">
         <h2>Automatic Equalization</h2>
         <div class="comparison-container">
@@ -167,7 +167,92 @@
             </div>
         </div>
     </div>
-
+    <!-- Production Style Transfer-->
+     <div class="dataset">
+        <h2>Production Style Transfer</h2>
+        <div class="comparison-container">
+            <!-- Diff-DEQ -->
+            <div>
+                <h3>NDMP</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Input WAV</th>
+                            <th>Predicted WAV</th>
+                            <th>Reference WAV</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><audio controls src="audio/style_transfer/deq_cristina_vane_-_so_easy_sample_0_input.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/deq_cristina_vane_-_so_easy_sample_0_processed.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/deq_cristina_vane_-_so_easy_sample_0_reference.wav"></audio></td>
+                        </tr>
+                        <tr></tr>
+                        <td><audio controls src="audio/style_transfer/deq_side_effects_project_-_sing_with_me_sample_1_input.wav"></audio></td>
+                        <td><audio controls src="audio/style_transfer/deq_side_effects_project_-_sing_with_me_sample_1_processed.wav"></audio></td>
+                        <td><audio controls src="audio/style_transfer/deq_side_effects_project_-_sing_with_me_sample_1_reference.wav"></audio></td>
+                        </tr>
+                        <tr>
+                            <td><audio controls src="audio/style_transfer/deq_tom_mckenzie_-_directions_sample_1_input.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/deq_tom_mckenzie_-_directions_sample_1_processed.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/deq_tom_mckenzie_-_directions_sample_1_reference.wav"></audio></td>
+                        </tr>
+                        <tr>
+                            <td><audio controls src="audio/style_transfer/deq_triviul_feat_sample_1_input.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/deq_triviul_feat_sample_1_processed.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/deq_triviul_feat_sample_1_reference.wav"></audio></td>
+                        </tr>
+                        <tr>
+                            <td><audio controls src="audio/style_transfer/deq_we_fell_from_the_sky_-_not_you_sample_1_input.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/deq_we_fell_from_the_sky_-_not_you_sample_1_processed.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/deq_we_fell_from_the_sky_-_not_you_sample_1_reference.wav"></audio></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Diff-PEQ -->
+            <div>
+                <h3>Diff-PEQ</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Input WAV</th>
+                            <th>Predicted WAV</th>
+                            <th>Target WAV</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><audio controls src="audio/style_transfer/peq_cristina_vane_-_so_easy_sample_0_input.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/peq_cristina_vane_-_so_easy_sample_0_processed.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/peq_cristina_vane_-_so_easy_sample_0_reference.wav"></audio></td>
+                        </tr>
+                        <tr></tr>
+                        <td><audio controls src="audio/style_transfer/peq_side_effects_project_-_sing_with_me_sample_1_input.wav"></audio></td>
+                        <td><audio controls src="audio/style_transfer/peq_side_effects_project_-_sing_with_me_sample_1_processed.wav"></audio></td>
+                        <td><audio controls src="audio/style_transfer/peq_side_effects_project_-_sing_with_me_sample_1_reference.wav"></audio></td>
+                        </tr>
+                        <tr>
+                            <td><audio controls src="audio/style_transfer/peq_tom_mckenzie_-_directions_sample_1_input.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/peq_tom_mckenzie_-_directions_sample_1_processed.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/peq_tom_mckenzie_-_directions_sample_1_reference.wav"></audio></td>
+                        </tr>
+                        <tr>
+                            <td><audio controls src="audio/style_transfer/peq_triviul_feat_sample_1_input.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/peq_triviul_feat_sample_1_processed.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/peq_triviul_feat_sample_1_reference.wav"></audio></td>
+                        </tr>
+                        <tr>
+                            <td><audio controls src="audio/style_transfer/peq_we_fell_from_the_sky_-_not_you_sample_1_input.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/peq_we_fell_from_the_sky_-_not_you_sample_1_processed.wav"></audio></td>
+                            <td><audio controls src="audio/style_transfer/peq_we_fell_from_the_sky_-_not_you_sample_1_reference.wav"></audio></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>                           
 </body>
 
 </html>
