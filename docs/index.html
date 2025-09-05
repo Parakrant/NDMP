@@ -2,257 +2,342 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Audio Comparison</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f8f8f8;
-        }
+  <meta charset="UTF-8">
+  <title>Audio Comparison</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f8f8f8;
+    }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #333;
-            background-color: cornflowerblue;
-        }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+      background-color: cornflowerblue;
+    }
 
-        .dataset {
-            margin-bottom: 40px;
-        }
+    .dataset {
+      margin-bottom: 40px;
+    }
 
-        h2 {
-            text-align: center;
-            background-color: cornflowerblue;
-            color: white;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
+    h2 {
+      text-align: center;
+      background-color: cornflowerblue;
+      color: white;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
 
-        h3 {
-            text-align: center;
-            color: #333;
-            margin: 20px 0 10px;
-        }
+    h3 {
+      text-align: center;
+      color: #333;
+      margin: 20px 0 10px;
+    }
 
-        .comparison-container {
-            display: flex;
-            justify-content: center;
-            gap: 200px;
-            /* increased from 20px to add more space */
-            align-items: flex-start;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-        }
+    .comparison-container {
+      display: flex;
+      justify-content: flex-start; /* keep first table always visible */
+      gap: 40px; /* space between tables */
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 10px;
+    }
 
-        table {
-            /* width: 500%; */
-            min-width: 800px;
-            /* Adjust to your preference */
-            max-width: 600px;
-            /* Keeps tables manageable */
-            border-collapse: collapse;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            background-color: white;
-        }
+    table {
+      width: 600px;         /* fixed table width */
+      border-collapse: collapse;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      flex-shrink: 0;       /* prevent shrinking when container is small */
+    }
 
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
 
+    th {
+      background-color: #f2f2f2;
+    }
 
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        audio {
-            width: 100%;
-            max-width: 250px;
-            margin: 5px 0;
-        }
-    </style>
+    audio {
+      width: 100%;
+      max-width: 250px;
+      margin: 5px 0;
+    }
+  </style>
 </head>
 
 <body>
-    <h1>Audio Samples</h1>
+  <h1>Audio Samples</h1>
 
-    <!-- Automatic EQ-->
-    <div class="dataset">
-        <h2>Automatic Equalization</h2>
-        <div class="comparison-container">
-            <!-- Diff-DEQ -->
-            <div>
-                <h3>NDMP</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Input WAV</th>
-                            <th>Predicted WAV</th>
-                            <th>Target WAV</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_input.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_predicted.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_target.wav"></audio></td>
-                        </tr>
-                        <tr></tr>
-                        <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_input.wav"></audio></td>
-                        <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_predicted.wav"></audio></td>
-                        <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_target.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_input.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_predicted.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_target.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_input.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_predicted.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_target.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_input.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_predicted.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_target.wav"></audio></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Diff-PEQ -->
-            <div>
-                <h3>Diff-PEQ</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Input WAV</th>
-                            <th>Predicted WAV</th>
-                            <th>Target WAV</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_input.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_predicted.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_target.wav"></audio></td>
-                        </tr>
-                        <tr></tr>
-                        <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_input.wav"></audio></td>
-                        <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_predicted.wav"></audio></td>
-                        <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_target.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_input.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_predicted.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_target.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_input.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_predicted.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_target.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_input.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_predicted.wav"></audio></td>
-                            <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_target.wav"></audio></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+  <!-- Automatic EQ -->
+  <div class="dataset">
+    <h2>Automatic Equalization</h2>
+    <div class="comparison-container">
+
+      <!-- NDMP -->
+      <div>
+        <h3>NDMP</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Input WAV</th>
+              <th>Predicted WAV</th>
+              <th>Target WAV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/deq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_target.wav"></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Diff-PEQ -->
+      <div>
+        <h3>Diff-PEQ</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Input WAV</th>
+              <th>Predicted WAV</th>
+              <th>Target WAV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_al_james_-_schoolboy_facination.stem_best_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_am_contra_-_heart_peripheral.stem_best_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_best_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_bobby_nobody_-_stitch_up.stem_best_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peq_tcn_film_none_carlos_gonzalez_-_a_place_for_us.stem_best_target.wav"></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PEQ+DRC -->
+      <div>
+        <h3>PEQ+DRC</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Input WAV</th>
+              <th>Predicted WAV</th>
+              <th>Target WAV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/peqdrc/al_james_-_schoolboy_facination.stem_run1_sample_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peqdrc/al_james_-_schoolboy_facination.stem_run1_sample_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peqdrc/al_james_-_schoolboy_facination.stem_run1_sample_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/peqdrc/am_contra_-_heart_peripheral.stem_run2_sample_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peqdrc/am_contra_-_heart_peripheral.stem_run2_sample_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peqdrc/am_contra_-_heart_peripheral.stem_run2_sample_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/peqdrc/ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_run4_sample_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peqdrc/ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_run4_sample_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peqdrc/ben_carrigan_-_we'll_talk_about_it_all_tonight.stem_run4_sample_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/peqdrc/bobby_nobody_-_stitch_up.stem_run3_sample_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peqdrc/bobby_nobody_-_stitch_up.stem_run3_sample_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peqdrc/bobby_nobody_-_stitch_up.stem_run3_sample_target.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/none_autoeq/peqdrc/carlos_gonzalez_-_a_place_for_us.stem_run3_sample_input.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peqdrc/carlos_gonzalez_-_a_place_for_us.stem_run3_sample_predicted.wav"></audio></td>
+              <td><audio controls src="audio/none_autoeq/peqdrc/carlos_gonzalez_-_a_place_for_us.stem_run3_sample_target.wav"></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
-    <!-- Production Style Transfer-->
-     <div class="dataset">
-        <h2>Production Style Transfer</h2>
-        <div class="comparison-container">
-            <!-- Diff-DEQ -->
-            <div>
-                <h3>NDMP</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Input WAV</th>
-                            <th>Predicted WAV</th>
-                            <th>Reference WAV</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><audio controls src="audio/style_transfer/deq_cristina_vane_-_so_easy_sample_0_input.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/deq_cristina_vane_-_so_easy_sample_0_processed.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/deq_cristina_vane_-_so_easy_sample_0_reference.wav"></audio></td>
-                        </tr>
-                        <tr></tr>
-                        <td><audio controls src="audio/style_transfer/deq_side_effects_project_-_sing_with_me_sample_1_input.wav"></audio></td>
-                        <td><audio controls src="audio/style_transfer/deq_side_effects_project_-_sing_with_me_sample_1_processed.wav"></audio></td>
-                        <td><audio controls src="audio/style_transfer/deq_side_effects_project_-_sing_with_me_sample_1_reference.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/style_transfer/deq_tom_mckenzie_-_directions_sample_1_input.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/deq_tom_mckenzie_-_directions_sample_1_processed.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/deq_tom_mckenzie_-_directions_sample_1_reference.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/style_transfer/deq_triviul_feat_sample_1_input.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/deq_triviul_feat_sample_1_processed.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/deq_triviul_feat_sample_1_reference.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/style_transfer/deq_we_fell_from_the_sky_-_not_you_sample_1_input.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/deq_we_fell_from_the_sky_-_not_you_sample_1_processed.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/deq_we_fell_from_the_sky_-_not_you_sample_1_reference.wav"></audio></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Diff-PEQ -->
-            <div>
-                <h3>Diff-PEQ</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Input WAV</th>
-                            <th>Predicted WAV</th>
-                            <th>Target WAV</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><audio controls src="audio/style_transfer/peq_cristina_vane_-_so_easy_sample_0_input.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/peq_cristina_vane_-_so_easy_sample_0_processed.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/peq_cristina_vane_-_so_easy_sample_0_reference.wav"></audio></td>
-                        </tr>
-                        <tr></tr>
-                        <td><audio controls src="audio/style_transfer/peq_side_effects_project_-_sing_with_me_sample_1_input.wav"></audio></td>
-                        <td><audio controls src="audio/style_transfer/peq_side_effects_project_-_sing_with_me_sample_1_processed.wav"></audio></td>
-                        <td><audio controls src="audio/style_transfer/peq_side_effects_project_-_sing_with_me_sample_1_reference.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/style_transfer/peq_tom_mckenzie_-_directions_sample_1_input.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/peq_tom_mckenzie_-_directions_sample_1_processed.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/peq_tom_mckenzie_-_directions_sample_1_reference.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/style_transfer/peq_triviul_feat_sample_1_input.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/peq_triviul_feat_sample_1_processed.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/peq_triviul_feat_sample_1_reference.wav"></audio></td>
-                        </tr>
-                        <tr>
-                            <td><audio controls src="audio/style_transfer/peq_we_fell_from_the_sky_-_not_you_sample_1_input.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/peq_we_fell_from_the_sky_-_not_you_sample_1_processed.wav"></audio></td>
-                            <td><audio controls src="audio/style_transfer/peq_we_fell_from_the_sky_-_not_you_sample_1_reference.wav"></audio></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>                           
-</body>
+  </div>
 
+  <!-- Production Style Transfer -->
+  <div class="dataset">
+    <h2>Production Style Transfer</h2>
+    <div class="comparison-container">
+
+      <!-- NDMP -->
+      <div>
+        <h3>NDMP</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Input WAV</th>
+              <th>Predicted WAV</th>
+              <th>Reference WAV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls src="audio/style_transfer/deq_cristina_vane_-_so_easy_sample_0_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/deq_cristina_vane_-_so_easy_sample_0_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/deq_cristina_vane_-_so_easy_sample_0_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/deq_side_effects_project_-_sing_with_me_sample_1_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/deq_side_effects_project_-_sing_with_me_sample_1_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/deq_side_effects_project_-_sing_with_me_sample_1_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/deq_tom_mckenzie_-_directions_sample_1_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/deq_tom_mckenzie_-_directions_sample_1_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/deq_tom_mckenzie_-_directions_sample_1_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/deq_triviul_feat_sample_1_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/deq_triviul_feat_sample_1_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/deq_triviul_feat_sample_1_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/deq_we_fell_from_the_sky_-_not_you_sample_1_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/deq_we_fell_from_the_sky_-_not_you_sample_1_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/deq_we_fell_from_the_sky_-_not_you_sample_1_reference.wav"></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Diff-PEQ -->
+      <div>
+        <h3>Diff-PEQ</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Input WAV</th>
+              <th>Predicted WAV</th>
+              <th>Reference WAV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls src="audio/style_transfer/peq_cristina_vane_-_so_easy_sample_0_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peq_cristina_vane_-_so_easy_sample_0_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peq_cristina_vane_-_so_easy_sample_0_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/peq_side_effects_project_-_sing_with_me_sample_1_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peq_side_effects_project_-_sing_with_me_sample_1_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peq_side_effects_project_-_sing_with_me_sample_1_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/peq_tom_mckenzie_-_directions_sample_1_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peq_tom_mckenzie_-_directions_sample_1_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peq_tom_mckenzie_-_directions_sample_1_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/peq_triviul_feat_sample_1_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peq_triviul_feat_sample_1_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peq_triviul_feat_sample_1_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/peq_we_fell_from_the_sky_-_not_you_sample_1_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peq_we_fell_from_the_sky_-_not_you_sample_1_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peq_we_fell_from_the_sky_-_not_you_sample_1_reference.wav"></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PEQ+DRC -->
+      <div>
+        <h3>PEQ+DRC</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Input WAV</th>
+              <th>Predicted WAV</th>
+              <th>Reference WAV</th>
+            </tr>
+          </thead>
+          <tbody>
+            cristina_vane_-_so_easy_sample_0_input.wav
+            <tr>
+              <td><audio controls src="audio/style_transfer/peqdrc/cristina_vane_-_so_easy_sample_0_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peqdrc/cristina_vane_-_so_easy_sample_0_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peqdrc/cristina_vane_-_so_easy_sample_0_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/peqdrc/side_effects_project_-_sing_with_me_sample_0_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peqdrc/side_effects_project_-_sing_with_me_sample_0_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peqdrc/side_effects_project_-_sing_with_me_sample_0_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/peqdrc/tom_mckenzie_-_directions_sample_0_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peqdrc/tom_mckenzie_-_directions_sample_0_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peqdrc/tom_mckenzie_-_directions_sample_0_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/peqdrc/triviul_feat_sample_1_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peqdrc/triviul_feat_sample_1_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peqdrc/triviul_feat_sample_1_reference.wav"></audio></td>
+            </tr>
+            <tr>
+              <td><audio controls src="audio/style_transfer/peqdrc/we_fell_from_the_sky_-_not_you_sample_1_input.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peqdrc/we_fell_from_the_sky_-_not_you_sample_1_processed.wav"></audio></td>
+              <td><audio controls src="audio/style_transfer/peqdrc/we_fell_from_the_sky_-_not_you_sample_1_reference.wav"></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</body>
 </html>
